@@ -13,8 +13,3 @@ You can explore the full lab configuration, topology diagrams, and device config
 Additional labs will be added here as I continue developing my network portfolio, including OSPF, EIGRP, STP, and EtherChannel configurations.
 
 ---
-
-## How to Use
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/YourUsername/YourRepoName.git
