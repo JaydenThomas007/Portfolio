@@ -8,5 +8,6 @@ You can explore the full lab configuration, topology diagrams, and device config
 
 LAB 1: [GNS3_LABS/VLAN&DHCP](./GNS3_LABS/VLAN&DHCP)
 
-LAB 2: 
+LAB 2: [GNS3_LABS/RedundantNetworkSetup](./GNS3_LABS/RedundantNetworkSetup)
+
 
