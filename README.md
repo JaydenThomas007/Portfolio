@@ -6,7 +6,7 @@ This portfolio includes the different networking configurations implemented on t
 ## Featured Labs
 You can explore the full lab configuration, topology diagrams, and device configs here:  
 
-LAB 1: [Simple ROAS Setup](./GNS3_LABS/VLAN&DHCP)
+LAB 1: [ROAS Setup](./GNS3_LABS/VLAN&DHCP)
 
 LAB 2: [Redundant Network Setup](./GNS3_LABS/RedundantNetworkSetup)
 
