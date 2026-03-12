@@ -1,0 +1,289 @@
+CoreRouter1#show running-config
+Building configuration...
+
+Current configuration : 1870 bytes
+!
+upgrade fpd auto
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname CoreRouter1
+!
+boot-start-marker
+boot-end-marker
+!
+logging message-counter syslog
+enable secret 5 $1$J2e9$36wT5.fN4zqhjb7A9LYPJ0
+!
+no aaa new-model
+ip source-route
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!         
+!         
+no ip domain lookup
+no ipv6 cef
+!         
+multilink bundle-name authenticated
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+archive   
+ log config
+  hidekeys
+!         
+!         
+!         
+!         
+!         
+ip tcp synwait-time 5
+!         
+!         
+!         
+!         
+interface Ethernet0/0
+ no ip address
+ shutdown 
+ duplex auto
+!         
+interface GigabitEthernet0/0
+ ip address dhcp
+ ip nat outside
+ ip virtual-reassembly
+ duplex full
+ speed 1000
+ media-type gbic
+ negotiation auto
+!         
+interface GigabitEthernet1/0
+ ip address 172.16.0.125 255.255.255.252
+ ip ospf network point-to-point
+ negotiation auto
+!         
+interface GigabitEthernet2/0
+ ip address 172.16.0.110 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ ip ospf network point-to-point
+ negotiation auto
+!         
+interface GigabitEthernet3/0
+ ip address 172.16.0.118 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ ip ospf network point-to-point
+ negotiation auto
+!         
+router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+ network 172.16.0.0 0.0.255.255 area 0
+ network 0.0.0.0 255.255.255.255 area 0
+ default-information originate metric 10
+!         
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!         
+!         
+ip nat inside source list INTERNET_ACCESS interface GigabitEthernet0/0 overload
+!         
+ip access-list standard INTERNET_ACCESS
+ permit 172.16.0.0 0.0.255.255
+!         
+no cdp log mismatch duplex
+!         
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+gatekeeper
+ shutdown 
+!         
+!         
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login    
+!         
+end    
+
+
+
+CoreRouter2#show running-config
+Building configuration...
+
+Current configuration : 1871 bytes
+!
+upgrade fpd auto
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname CoreRouter2
+!
+boot-start-marker
+boot-end-marker
+!
+logging message-counter syslog
+enable secret 5 $1$5Fp.$u89Lv0WhsZgJOcZd4/CQN.
+!
+no aaa new-model
+ip source-route
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!         
+!         
+no ip domain lookup
+no ipv6 cef
+!         
+multilink bundle-name authenticated
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+archive   
+ log config
+  hidekeys
+!         
+!         
+!         
+!         
+!         
+ip tcp synwait-time 5
+!         
+!         
+!         
+!         
+interface Ethernet0/0
+ no ip address
+ shutdown 
+ duplex auto
+!         
+interface GigabitEthernet0/0
+ ip address dhcp
+ ip nat outside
+ ip virtual-reassembly
+ duplex full
+ speed 1000
+ media-type gbic
+ negotiation auto
+!         
+interface GigabitEthernet1/0
+ ip address 172.16.0.126 255.255.255.252
+ ip ospf network point-to-point
+ negotiation auto
+!         
+interface GigabitEthernet2/0
+ ip address 172.16.0.122 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ ip ospf network point-to-point
+ negotiation auto
+!         
+interface GigabitEthernet3/0
+ ip address 172.16.0.114 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ ip ospf network point-to-point
+ negotiation auto
+!         
+router ospf 1
+ router-id 4.4.4.4
+ log-adjacency-changes
+ network 172.16.0.0 0.0.255.255 area 0
+ network 0.0.0.0 255.255.255.255 area 0
+ default-information originate metric 100
+!         
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!         
+!         
+ip nat inside source list INTERNET_ACCESS interface GigabitEthernet0/0 overload
+!         
+ip access-list standard INTERNET_ACCESS
+ permit 172.16.0.0 0.0.255.255
+!         
+no cdp log mismatch duplex
+!         
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+gatekeeper
+ shutdown 
+!         
+!         
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login    
+!         
+end  
