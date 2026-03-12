@@ -16,7 +16,14 @@ This project simulates a small enterprise network environment designed for zero-
 * **Access Control**: ACLs implemented to isolate IoT (VLAN 40) and prevent unauthorized inter-VLAN routing.
 * **Edge Protection:** NAT Overload (PAT) and DHCP-assigned ISP interfaces.
 
+### Infrastructure Services (Debian Linux)
+To centralize network management, a Debian Server was deployed to provide critical infrastructure services across all subnets.
 
+**DHCP Service:** Configured with multiple scopes to dynamically assign IP addresses to VLANs 10, 20, 30, and 40 based on the VLSM plan.
+
+**DNS Service:** Provides internal name resolution for local resources and forwards external queries to the ISP routers.
+
+**Relay Logic:** Since the server sits in a specific subnet, ip helper-address was configured on all SVI (Switch Virtual Interfaces) on the Distribution Switches to forward DHCP broadcasts to the Debian server's IP.
 
 ---
 
