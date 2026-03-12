@@ -79,6 +79,6 @@ This ensures that both distribution switches are actively forwarding traffic sim
 ---
 
 
-**Author:** [Your Name/GitHub Handle]
-**Date:** March 2026
-**Tools:** Cisco Packet Tracer / GNS3 / CML
+**Author:** [Jayden Thomad/JaydenThomas007]
+**Date:** March 11, 2026
+**Tools:** GNS3 / Cisco Routers & Switchs / Linux 
