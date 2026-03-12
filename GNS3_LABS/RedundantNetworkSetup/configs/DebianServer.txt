@@ -1,0 +1,24 @@
+# Debian Server
+domain-needed
+bogus-priv
+domain=mydomain.local
+
+# DHCP ranges (forwarded via helper) 
+dhcp-range=set:vlan10,172.16.0.4,172.16.0.62,255.255.255.192,12h
+dhcp-range=set:vlan20,172.16.0.68,172.16.0.78,255.255.255.240,12h
+dhcp-range=set:vlan30,172.16.0.101,172.16.0.102,255.255.255.248,12h
+# Gateway for each VLAN 
+dhcp-option=tag:VLAN10,option:router,172.16.0.1
+dhcp-option=tag:VLAN20,option:router,172.16.0.65
+dhcp-option=tag:VLAN30,option:router,172.16.0.97
+
+# Authoritative server 
+dhcp-authoritative
+
+# VLAN-specific DNS 
+dhcp-option=option:dns-server,172.16.0.100
+
+# Forward to external DNS 
+server=8.8.8.8
+server=8.8.4.4
+
