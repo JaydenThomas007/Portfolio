@@ -60,5 +60,6 @@ It includes VLAN segmentation, inter-VLAN routing, DHCP and DNS services, NAT, a
 - Lab demonstrates practical VLAN segmentation, DHCP deployment, and network security controls.
 
 ---
-
-## Repository Structure
+**Author:** [Jayden Thomad/JaydenThomas007]
+**Date:** March 4, 2026
+**Tools:** GNS3 / Cisco Routers & Switchs / Linux 
