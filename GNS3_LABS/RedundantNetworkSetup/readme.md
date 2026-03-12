@@ -11,10 +11,10 @@ This project simulates a small enterprise network environment designed for zero-
 * **Redundancy:** FHRP (VRRP) for gateway redundancy; OSPF for dynamic path recovery.
 * **Traffic Engineering:** MST instances used to load balance specific VLANs across different physical uplinks.
 * **Scalability:** EtherChannel (LACP) used to increase bandwidth between switching tiers.
-* **Security:** * VLAN Segmentation & Private/Native VLAN 99 implementation.
-* Port Security: **PortFast** and **BPDU Guard** enabled on all access ports.
-* Access Control: ACLs implemented to isolate IoT (VLAN 40) and prevent unauthorized inter-VLAN routing.
-* Edge Protection: NAT Overload (PAT) and DHCP-assigned ISP interfaces.
+* **Security:**  VLAN Segmentation & Private/Native VLAN 99 implementation.
+* **Port Security:** **PortFast** and **BPDU Guard** enabled on all access ports.
+* **Access Control**: ACLs implemented to isolate IoT (VLAN 40) and prevent unauthorized inter-VLAN routing.
+* **Edge Protection:** NAT Overload (PAT) and DHCP-assigned ISP interfaces.
 
 
 
