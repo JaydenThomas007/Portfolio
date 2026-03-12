@@ -19,7 +19,7 @@ This project simulates a small enterprise network environment designed for zero-
 ### Infrastructure Services (Debian Linux)
 To centralize network management, a Debian Server was deployed to provide critical infrastructure services across all subnets.
 
-* **DHCP Service:** Configured with multiple scopes to dynamically assign IP addresses to VLANs 10 and 20 based on the VLSM plan. VLAN 30 is apart of the management range and VLAN 40 is for IoT connections thus the were remove from the getting dhcp and dns servrices and assigned IP addresses statically.
+* **DHCP Service:** Configured with multiple scopes to dynamically assign IP addresses to VLANs 10,20 and 30 based on the VLSM plan. VLAN 40 is for IoT connections thus the were remove from the getting dhcp and dns servrices and assigned IP addresses statically.
 
 * **DNS Service:** Provides internal name resolution for local resources and forwards external queries to the ISP routers.
 
